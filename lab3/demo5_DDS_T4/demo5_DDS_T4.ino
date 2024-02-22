@@ -39,6 +39,17 @@ unsigned long start = 0;
 int deciSeconds = 40;
 // static unsigned long timer = 0;
 
+/*******************  Prototypes for Demo 5 functions  ********************/
+void initTask(int id, const char* name, void (*func)(), unsigned short int initialState, unsigned int initialSleep);
+void task_self_quit();
+void task_start(int taskID);
+void task3();                                         // Countdown for each decisecond on a 4-digit 7-segment display
+void task2();                                         // plays song, rest, then repeat
+void task2_2(int freq);                               // plays a song (Mario theme song)                    
+void task2_1(int freq);                               // plays a tone 
+void task1_on();                                      // turn on external LED
+void task1_off();                                     // turn off external LED
+
 // Structure defining a Task Control Block (TCB), which holds information about each task.
 typedef struct TCBstruct {
   int taskID; // Unique identifier for the task within the task list.
@@ -109,7 +120,7 @@ void loop() {
         tasklist[i].state = STATE_READY;
       }
     }
-`   
+   
     // If song has finished playing
     if (counter == (sizeof(melody) / sizeof(melody[0]))) {
       tasklist[1].sleeptime = 4000;
