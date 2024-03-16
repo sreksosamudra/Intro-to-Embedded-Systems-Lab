@@ -1,3 +1,10 @@
+/**
+ * @file partC.ino
+ * @author Arvin Nusalim and Samantha Reksosamudra
+ * @date March 5, 2024
+ * @brief This program demonstrates the functionality of Study Buddy. It incorporates a servo motor, LCD display, ultrasonic sensor, and joystick module.
+ */
+
 #include <Arduino_FreeRTOS.h>
 #include <queue.h>
 #include <Servo.h>
